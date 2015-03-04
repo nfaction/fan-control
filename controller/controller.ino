@@ -70,7 +70,10 @@ void setup() {
     digitalWrite(foff, HIGH);
     digitalWrite(low, HIGH);
     delay(300);
-          
+    
+    // Start DHT
+    dht.begin();
+
     Serial.print("Board Initialized and Reset.\n");
     
 }
@@ -120,7 +123,7 @@ void loop() {
       digitalWrite(fan, LOW);
       delay(300);
       
-      // Get Tempurature
+      // Get Temperature
       // Reading temperature or humidity takes about 250 milliseconds!
       // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
       float h = dht.readHumidity();
